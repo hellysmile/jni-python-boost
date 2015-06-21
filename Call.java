@@ -9,6 +9,6 @@ public class Call {
 
     public static void main(String[] args) {
         Call call = new Call();
-        System.out.println(call.fn(10));
+        System.out.println(call.fn(Integer.parseInt(args[0])));
     }
 }

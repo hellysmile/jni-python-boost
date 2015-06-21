@@ -36,7 +36,7 @@ so:
 	-lpython$(PYTHON_VERSION) \
 	-o $(TARGET).so
 
-exec: clean class
+exec: class
 	g++ -o $(TARGET) \
 	-I$(JDK)/Contents/Home/include \
 	-I$(JDK)/Contents/Home/include/darwin \
@@ -51,6 +51,7 @@ exec: clean class
 
 	LD_LIBRARY_PATH=$(JDK)/Contents/Home/jre/lib/server/ ./$(TARGET) 10
 
-lib: clean class o so
-	# LD_LIBRARY_PATH=$(JDK)/Contents/Home/jre/lib/server/ python -c "import call; c = call.Call(); print(c.fn(10))"
-	LD_LIBRARY_PATH=$(JDK)/Contents/Home/jre/lib/server/ ipython
+lib: class o so
+	LD_LIBRARY_PATH=$(JDK)/Contents/Home/jre/lib/server/ python -c "import call; c = call.Call(); print(c.fn(10))"
+
+all: clean exec lib
