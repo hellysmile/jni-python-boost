@@ -1,5 +1,10 @@
-# jni-python-boost
-Jni Python Boost Example
+jni-python-boost
+================
+
+:info: Jni Python Boost Example
+
+Usage
+*****
 
 Factorial Calculator written in Java with C++ JNI binding to Python via Boost::
 
@@ -15,3 +20,5 @@ Factorial Calculator written in Java with C++ JNI binding to Python via Boost::
 
     ./call.py 10 # Python boost bindings
     # 3628800
+
+`Make file designed for MacOS X, can be easily adjusted to any Linux`
