@@ -1,6 +1,8 @@
 PYTHON_VERSION = 2.7
 PYTHON_VERSION_FULL = $(PYTHON_VERSION).10
-PYTHON_INCLUDE = /usr/local/Cellar/python/$(PYTHON_VERSION_FULL)/Frameworks/Python.framework/Versions/$(PYTHON_VERSION)/include/python$(PYTHON_VERSION)
+PYTHON_LOCATION = /usr/local/Cellar/python/$(PYTHON_VERSION_FULL)/Frameworks/Python.framework/Versions/$(PYTHON_VERSION)
+PYTHON_INCLUDE = $(PYTHON_LOCATION)/include/python$(PYTHON_VERSION)
+PYTHON_CONFIG = $(PYTHON_LOCATION)/lib/python$(PYTHON_VERSION)/config
 
 BOOST_INC = /usr/local/include
 BOOST_LIB = /usr/local/lib
@@ -32,7 +34,7 @@ so:
 	-L$(JDK)/Contents/Home/jre/lib/server/ \
 	-L$(BOOST_LIB) \
 	-lboost_python \
-	-L/usr/local/Cellar/python/$(PYTHON_VERSION_FULL)/Frameworks/Python.framework/Versions/$(PYTHON_VERSION)/lib/python$(PYTHON_VERSION)/config \
+	-L$(PYTHON_CONFIG) \
 	-lpython$(PYTHON_VERSION) \
 	-o $(TARGET).so
 
@@ -44,7 +46,7 @@ exec: class
 	-I$(PYTHON_INCLUDE) \
 	-L$(BOOST_LIB) \
 	-lboost_python \
-	-L/usr/local/Cellar/python/$(PYTHON_VERSION_FULL)/Frameworks/Python.framework/Versions/$(PYTHON_VERSION)/lib/python$(PYTHON_VERSION)/config \
+	-L$(PYTHON_CONFIG) \
 	-lpython$(PYTHON_VERSION) \
 	$(TARGET).cpp \
 	-ljvm
