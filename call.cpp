@@ -40,8 +40,8 @@ public:
         jvm->DestroyJavaVM();
     }
 
-    unsigned long long fn(int value) {
-        return (unsigned long long)env->CallIntMethod(JCall, jfn, (jint)value);
+    long fn(int value) {
+        return (long)env->CallIntMethod(JCall, jfn, (jint)value);
     }
 };
 
