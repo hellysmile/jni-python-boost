@@ -1,6 +1,6 @@
 PYTHON_VERSION = 2.7
 PYTHON_VERSION_FULL = $(PYTHON_VERSION).10
-PYTHON_INCLUDE = /usr/include/python$(PYTHON_VERSION)
+PYTHON_INCLUDE = /usr/local/Cellar/python/$(PYTHON_VERSION_FULL)/Frameworks/Python.framework/Versions/$(PYTHON_VERSION)/include/python$(PYTHON_VERSION)
 
 BOOST_INC = /usr/local/include
 BOOST_LIB = /usr/local/lib
