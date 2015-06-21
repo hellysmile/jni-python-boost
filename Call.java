@@ -1,7 +1,7 @@
 public class Call {
     public long fn(int value) {
         if (value <= 1) {
-            return value;
+            return 1;
         } else {
             return fn(value - 1) * value;
         }
